@@ -4,7 +4,7 @@ output "virtual_machine" {
   sensitive   = true
 }
 
-output "private_vlan" {
-  description = "Returns the private VLAN info."
-  value       = module.vlans.private_compute_vlan
-}
+#output "private_vlan" {
+#  description = "Returns the private VLAN info."
+#  value       = module.vlans.private_compute_vlan
+#}
