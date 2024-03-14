@@ -1,0 +1,2 @@
+variable "datacenter" {}
+variable "tags" {}

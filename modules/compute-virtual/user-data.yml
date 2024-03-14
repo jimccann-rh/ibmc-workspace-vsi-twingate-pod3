@@ -1,0 +1,8 @@
+#cloud-config
+package_update: false
+package_upgrade: false
+final_message: "The system is finally up, after $UPTIME seconds"
+output: {all: '| tee -a /var/log/cloud-init-output.log'}
+runcmd:
+ - touch /root/itdidrun
+ - curl "https://binaries.twingate.com/connector/setup.sh" | sudo TWINGATE_ACCESS_TOKEN="${tg_connector_token}" TWINGATE_REFRESH_TOKEN="${tg_connector_refresh_token}" TWINGATE_URL="https://${tg_network}.twingate.com" bash
