@@ -37,7 +37,7 @@ resource "ibm_compute_ssh_key" "project" {
 #}
 
 module "virtual-machines" {
-  depends_on   = [module.vlans]
+#  depends_on   = [module.vlans]
   source       = "./modules/compute-virtual"
   count        = var.vsicount 
   name         = "${var.project}-twingate-virtual-instance-${count.index}"
